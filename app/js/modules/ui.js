@@ -205,7 +205,7 @@ function UserInterface() {
 
 	function openSharePanel() {
 		$("#share-button").off()
-		$(".share-icon").click(APP.share.social("Check out @DSI4EU's #dataviz showing the network of #DSI across Europe", "http://digitalsocial.eu"));
+		$(".share-icon").click(APP.share.social("Check out @DSI4EU's #dataviz showing the network of #DSI across Europe", "http://ds.idatosabiertos.org"));
 		APP.share.embedLink(APP.permalink.createUrl())
 		openToolsPanel($('#tools-share'), function() {
 			$(".share-icon").off();

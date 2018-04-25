@@ -78,7 +78,7 @@ function OrgPanel() {
       .html("Is this your organisation? ")
     cta.append("span").append("a")
       .attr("class", "orgpanel-cta")
-      .attr("href", "http://www.digitalsocial.eu/login")
+      .attr("href", "http://ds.idatosabiertos.org/login")
       .attr("target", "_blank")
       .text("Update your profile.")
   }
