@@ -197,7 +197,7 @@ function Filter() {
 				if(!APP.network.showLinkedOnly) $('#network-linked-only').addClass('active')
 				$('#network-linked-only').off()
 				if(!window.isMobile){
-				$('#network-linked-only .settings-description').text('Include organisations with no shared projects')
+				$('#network-linked-only .settings-description').text('Incluir organizaciones sin proyectos compartidos')
 					$('#network-linked-only').click(function() {
 						APP.network.showLinkedOnly = !APP.network.showLinkedOnly
 						APP.network.resetFocus();
@@ -206,7 +206,7 @@ function Filter() {
 						$('#network-linked-only').toggleClass('active')
 					})
 				} else {
-					$('#network-linked-only .settings-description').text('Include organisations with no shared projects (available on desktop only)')
+					$('#network-linked-only .settings-description').text('Incluir organizaciones sin proyectos compartidos (disponible solo en el escritorio)')
 					$('#network-linked-only').addClass('disabled')
 				}
 				break;

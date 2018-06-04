@@ -267,7 +267,7 @@ function NetworkView() {
 
 	function createInfoPopup(result) {
 		if (currentActiveNetwork.orgs.length > 1 && !APP.embed) {
-			infoPopup = $('<div class="network-popup"><h3 class="network-' + result.type + '">' + result.name + '</h3><p class="network-cta">See network</p></div>');
+			infoPopup = $('<div class="network-popup"><h3 class="network-' + result.type + '">' + result.name + '</h3><p class="network-cta">Ver Red</p></div>');
 			infoPopup.click(function() {
 				APP.ui.openNetworkList(result);
 			})

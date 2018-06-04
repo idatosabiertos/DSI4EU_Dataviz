@@ -54,19 +54,19 @@ function OrgPanel() {
     $(".map-panel-container .org-type").html(org.organisation_type[0].name);
     
     if (org.linked_prjs.length == 0 && org.short_description == "") {
-      $(".map-panel-container .org-subtitle").html("0 projects");
-      $(".map-panel-container .scrolling p").html("This organisation has no description.");
-      insertCta("organisation");
+      $(".map-panel-container .org-subtitle").html("0 proyectos");
+      $(".map-panel-container .scrolling p").html("Esta organización no tiene descripción.");
+      insertCta("organización");
     } else if (org.linked_prjs.length == 0 && org.short_description != "") {
-      $(".map-panel-container .org-subtitle").html("0 projects");
-      insertCta("projects");
+      $(".map-panel-container .org-subtitle").html("0 proyectos");
+      insertCta("proyectos");
       $(".map-panel-container .scrolling p").html(org.short_description);
     } else if (org.linked_prjs.length > 0 && org.short_description == "") {
-      $(".map-panel-container .org-subtitle").html(org.linked_prjs.length+_.pluralize(" project", org.linked_prjs.length));
-      $(".map-panel-container .scrolling p").html("This organisation has no description.");
-      insertCta("description");
+      $(".map-panel-container .org-subtitle").html(org.linked_prjs.length+_.pluralize(" proyecto", org.linked_prjs.length));
+      $(".map-panel-container .scrolling p").html("Esta organización no tiene descripción.");
+      insertCta("descripción");
     } else {
-      $(".map-panel-container .org-subtitle").html(org.linked_prjs.length+_.pluralize(" project", org.linked_prjs.length));
+      $(".map-panel-container .org-subtitle").html(org.linked_prjs.length+_.pluralize(" proyecto", org.linked_prjs.length));
       $(".map-panel-container .scrolling p").html(org.short_description);
     }
 
@@ -75,12 +75,12 @@ function OrgPanel() {
 
   function insertCta(parameter) {
     var cta = d3.select(".map-panel-container .org-panel-cta")
-      .html("Is this your organisation? ")
+      .html("Es esta tu organización? ")
     cta.append("span").append("a")
       .attr("class", "orgpanel-cta")
       .attr("href", "http://ds.idatosabiertos.org/login")
       .attr("target", "_blank")
-      .text("Update your profile.")
+      .text("Actualiza tu perfil.")
   }
 
 
@@ -285,7 +285,7 @@ function OrgPanel() {
       barchartDiv.append("h3")
         .text(function(){
           if (data.length==0) { return ""; }
-          else if (field=="support_tags") { return "Social area"; }
+          else if (field=="support_tags") { return "Área temática"; }
           else return field;
         })
       var barchartItems = barchartDiv.append("svg")

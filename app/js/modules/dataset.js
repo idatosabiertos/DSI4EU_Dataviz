@@ -6,13 +6,13 @@ function Dataset() {
     self.fields = {}
 
     self.fields.cluster_names_map = {
-        'countries': 'a country',
-        'focus': 'a tech focus',
-        'networkTags': 'a network tag',
-        'organisation_type': 'an organisation type',
-        'support_tags': 'a social area',
-        'technology': 'a technology',
-        'linked_orgs': 'an organisation'
+        'countries': 'un país',
+        'focus': 'una tecnología foco',
+        'networkTags': 'una etiqueta de red',
+        'organisation_type': 'un tipo de organización',
+        'support_tags': 'una área temática',
+        'technology': 'una tecnología',
+        'linked_orgs': 'una organización'
     }
 
     //var organisations_path = 'data/organisations2.json'

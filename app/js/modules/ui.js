@@ -218,16 +218,16 @@ function UserInterface() {
 	function openSearchPanel() {
 		$('html').addClass('search')
 		$("#search-button").off()
-		var search_hint = 'Search'
+		var search_hint = 'Buscar'
 		switch (APP.state) {
 			case 'map':
-				search_hint = 'Find an organisation'
+				search_hint = 'Buscar organización'
 				break;
 			case 'network':
-				search_hint = 'Find a project or an organisation'
+				search_hint = 'Buscar proyecto u organización'
 				break;
 			case 'cluster':
-				search_hint = 'Find ' + APP.dataset.fields.cluster_names_map[APP.cluster.cluster_field].toLowerCase();
+				search_hint = 'Buscar ' + APP.dataset.fields.cluster_names_map[APP.cluster.cluster_field].toLowerCase();
 				break;
 		}
 		$('#search-input').attr('placeholder', search_hint)

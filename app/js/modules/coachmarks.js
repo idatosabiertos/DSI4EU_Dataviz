@@ -31,9 +31,9 @@ function CoachMarks() {
 		callout.css("left", targetPos.left + targetW/2 - (callout.outerWidth())/2);
 
 		if (APP.state==="cluster") {
-			message = "This panel lets you filter, group and subdivide projects according to different criteria."
+			message = "Este panel le permite filtrar, agrupar y subdividir proyectos según diferentes criterios."
 		} else {
-			message = "This panel lets you select which types of organisations you want to see."
+			message = "Este panel le permite seleccionar qué tipos de organizaciones desea ver."
 		}
 
 		$(".view.coachmarks .callout .text").html(message)

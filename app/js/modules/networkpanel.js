@@ -7,7 +7,7 @@ function NetworkPanel() {
 		//console.log(selectedOrg);
 
 		$(".network-panel-title h2").text(selectedOrg.name);
-		$(".subtitle").text(selectedOrg.shared_prjs.length+_.pluralize(" shared project", selectedOrg.shared_prjs.length));
+		$(".subtitle").text(selectedOrg.shared_prjs.length+_.pluralize(" proyecto compartido", selectedOrg.shared_prjs.length));
 
 		//max number of linked ORGs of all the PRJ listed in the network panel
 		var maxBar = d3.max(selectedOrg.shared_prjs, function (d) {
@@ -62,7 +62,7 @@ function NetworkPanel() {
 		})
 		
 		function createOrgList(d) {
-			var orglist = "Shared with "+d.linked_orgs.length+_.pluralize(" organisation", d.linked_orgs.length)+": ";
+			var orglist = "Compartido con "+d.linked_orgs.length+_.pluralize(" organización", d.linked_orgs.length)+": ";
 			d.linked_orgs.forEach(function (l, i) {
 				orglist = orglist.concat(l.name);
 				if (i != d.linked_orgs.length-1) orglist = orglist.concat(", ");
