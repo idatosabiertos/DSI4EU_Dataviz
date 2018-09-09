@@ -22,7 +22,7 @@ function ClusterPanel() {
 		})
 		var all_prjs = _.uniq([].concat.apply([], all_values))
 		$(".cluster-panel-container h2").html(selectedCluster.key);
-		$(".cluster-panel-container .subtitle").html(all_prjs.length+" projects");
+		$(".cluster-panel-container .subtitle").html(all_prjs.length+" proyectos");
 	}
 
 	function fillHeaderNoSub(selectedCluster) {
@@ -31,7 +31,7 @@ function ClusterPanel() {
 		})
 		var all_prjs = _.uniq(all_values)
 		$(".cluster-panel-container h2").html(selectedCluster.key);
-		$(".cluster-panel-container .subtitle").html(all_prjs.length+" projects");
+		$(".cluster-panel-container .subtitle").html(all_prjs.length+" proyectos");
 	}
 
 	function drawPanel(selectedCluster) {
@@ -99,7 +99,7 @@ function ClusterPanel() {
 			.attr("class", "cta-text")
 			.style("display", "inline-block")
 			.text(function (d) {
-				return "Show "+d.values.length+_.pluralize(" project", d.values.length);
+				return "Show "+d.values.length+_.pluralize(" proyectos", d.values.length);
 			})
 		
 		cta.append("div")

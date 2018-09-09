@@ -23,8 +23,8 @@ function mapState(){
 				}
 			} else {
 				var t = {
-					x: 226,
-					y: 441,
+					x: -468,
+					y: 1098,
 					k: 1
 				}
 			}

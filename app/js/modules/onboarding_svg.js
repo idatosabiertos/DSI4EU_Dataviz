@@ -8,11 +8,11 @@
 
     var colors = ['#F28244', '#00A9C2', '#E36556', '#8579B6', '#B164A5', '#F7C589', '#80D4E1', '#F3B4B9', '#B3ABD1', '#D8B1D2']
 
-    var data = [{label: 'education', value: 200},
-      {label: 'healthcare', value: 180},
-      {label: 'democracy', value: 160},
-      {label: 'environment', value: 230},
-      {label: 'employment', value: 200}]
+    var data = [{label: 'educación', value: 200},
+      {label: 'salud', value: 180},
+      {label: 'democracia', value: 210},
+      {label: 'medio ambiente', value: 420},
+      {label: 'empleo', value: 200}]
 
     for (var i = 0; i < 5; ++i) {
       data.push({label: '', value: Math.random() * 40})

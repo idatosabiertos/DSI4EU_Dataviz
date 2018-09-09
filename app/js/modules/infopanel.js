@@ -6,7 +6,7 @@ function InfoPanel() {
 	function createLegend(state) {
 		switch(state){
 			case "map":
-				var frag = $("<li><div class='legend-dot org-color'></div><div class='legend-text'>Organisations</div></li>");
+				var frag = $("<li><div class='legend-dot org-color'></div><div class='legend-text'>Organizaciones</div></li>");
 				$("#info-map .legenda ul").append(frag);
 				createSizeLegend("map")
 			break;
@@ -26,10 +26,10 @@ function InfoPanel() {
 		var orgConnRatio = Math.round((connections.totalLinkedOrgs/APP.dataset.orgs.length)*100);
 		var prjShareRatio = Math.round((connections.totalSharedPrjs/APP.dataset.prjs.length)*100);
 		$(".network-stats-orgs .stats-caption span").html(orgConnRatio+"%");
-		$(".network-stats-orgs .stats-paragraph").html(orgConnRatio+"% of organisations in the DSI network are connected to at least one other organisation in the network.");
+		$(".network-stats-orgs .stats-paragraph").html(orgConnRatio+"% de las organizaciones están conectadas con al menos otra organización de la red.");
 		$(".network-stats-orgs .stats-bar .color").transition({width: orgConnRatio+"%"}, 2000);
 		$(".network-stats-prjs .stats-caption span").html(prjShareRatio+"%");
-		$(".network-stats-prjs .stats-paragraph").html(prjShareRatio+"% of projects are linked to two or more organisations in the network.");
+		$(".network-stats-prjs .stats-paragraph").html(prjShareRatio+"% de los proyectos están conectados con dos o más organizaciones en la red.");
 		$(".network-stats-prjs .stats-bar .color").transition({width: prjShareRatio+"%"}, 2000);
 	}
 
@@ -38,7 +38,7 @@ function InfoPanel() {
 		if (subdivideField != "none") {
 			var subdivideData = APP.dataset.fields[APP.cluster.subdivide_field];
 			var fieldColorScale = APP.getColorScale(APP.cluster.subdivide_field);
-		} else var subdivideData = [{name: "Projects", color: "#f28244"}]
+		} else var subdivideData = [{name: "Proyectos", color: "#f28244"}]
 		var item = d3.select("#info-cluster .legenda ul").selectAll(".legenda-item")
 			.data(subdivideData)
 			.enter()
@@ -101,8 +101,8 @@ function InfoPanel() {
 			.attr("class", "legenda-size-item")
 			.text(function () {
 				return field==="cluster"
-				? "Number of projects"
-				: "Number of organisations in the same location"
+				? "Número de proyectos"
+				: "Número de organizaciones en el mismo lugar"
 			})
 		$(".legenda-size-item").transition({opacity: 1, delay: 750}, 500)
 	}

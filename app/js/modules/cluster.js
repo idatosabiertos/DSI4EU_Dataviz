@@ -172,7 +172,7 @@ function ClusterView() {
 					return d.values.length
 				})
 				.append('span')
-				.text('projects')
+				.text('proyectos')
 
 		clusterWrappers.each(addLabel)
 		clusterWrappers.on("click", function(d){

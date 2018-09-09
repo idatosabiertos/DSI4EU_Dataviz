@@ -6,7 +6,7 @@ function NetworkList() {
 	function fillList(org) {
 
 		var network = APP.dataset.getNetworkData(org);	
-		$(".subtitle").text(network.orgs.length+_.pluralize(" Organisation", network.orgs.length)+", "+network.prjs.length+_.pluralize(" shared project", network.prjs.length));
+		$(".subtitle").text(network.orgs.length+_.pluralize(" Organisation", network.orgs.length)+", "+network.prjs.length+_.pluralize(" proyecto compartido", network.prjs.length));
 		
 		network.orgs.sort(function (a, b) {
 			return b.linked_orgs.length - a.linked_orgs.length;
@@ -41,7 +41,7 @@ function NetworkList() {
 
 		itemParagraphs.append("p")
 			.text(function (d) {
-				return "Works with "+d.linked_orgs.length+_.pluralize(" Organisation", d.linked_orgs.length)+" on "+d.shared_prjs.length+_.pluralize(" project", d.shared_prjs.length);
+				return "Funciona con "+d.linked_orgs.length+_.pluralize(" Organización", d.linked_orgs.length)+" en "+d.shared_prjs.length+_.pluralize(" proyectos", d.shared_prjs.length);
 			})
 
 		function toNetworkPanel(org) {

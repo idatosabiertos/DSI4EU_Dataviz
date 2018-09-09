@@ -18,7 +18,7 @@ function Search() {
 		})
 
 		if (_.isEmpty(results)) {
-			$('#search-results').append('<li class="notfound">No results found.</li>');
+			$('#search-results').append('<li class="notfound">No se encontrarón resultados.</li>');
 		} else {
 			createResults(results, query)
 		}
@@ -28,14 +28,14 @@ function Search() {
 	function createResults(results, query) {
 		_.each(results, function(r, id) {
 			var org_links = ''
-			if ((r.linked_prjs && r.linked_orgs) && (r.linked_orgs.length > 0) && APP.state != 'cluster') org_links = '<span class="search-linked-orgs"><strong>' + r.linked_orgs.length + '</strong> ' + _('partner').pluralize(r.linked_orgs.length) + '</span>'
+			if ((r.linked_prjs && r.linked_orgs) && (r.linked_orgs.length > 0) && APP.state != 'cluster') org_links = '<span class="search-linked-orgs"><strong>' + r.linked_orgs.length + '</strong> ' + _('socio').pluralize(r.linked_orgs.length) + '</span>'
 			if (APP.state == 'map') {
-				var result = $('<li><p class="search-result-name">' + r.name + '</p><p class="search-result-info"><span class="search-linked-prjs"><strong>' + r.linked_prjs.length + '</strong> ' + _('project').pluralize(r.linked_prjs.length) + '</span>' + org_links + '</p></li>');
+				var result = $('<li><p class="search-result-name">' + r.name + '</p><p class="search-result-info"><span class="search-linked-prjs"><strong>' + r.linked_prjs.length + '</strong> ' + _('proyecto').pluralize(r.linked_prjs.length) + '</span>' + org_links + '</p></li>');
 			} else if (APP.state == 'network') {
 				if (r.hasOwnProperty('organisation_type')) {
-					var result = $('<li><p class="search-result-name">' + r.name + '</p><p class="search-result-info"><span class="search-result-type org">ORG</span><span class="search-linked-prjs"><strong>' + r.linked_prjs.length + '</strong> ' + _('project').pluralize(r.linked_prjs.length) + '</span><span class="search-linked-orgs"><strong>' + r.linked_prjs.length + '</strong> partners</span></p></li>')
+					var result = $('<li><p class="search-result-name">' + r.name + '</p><p class="search-result-info"><span class="search-result-type org">ORG</span><span class="search-linked-prjs"><strong>' + r.linked_prjs.length + '</strong> ' + _('socio').pluralize(r.linked_prjs.length) + '</span><span class="search-linked-orgs"><strong>' + r.linked_prjs.length + '</strong> socios</span></p></li>')
 				} else {
-					var result = $('<li><p class="search-result-name">' + r.name + '</p><p class="search-result-info"><span class="search-result-type prj">PRJ</span><span class="search-linked-prjs"><strong>' + r.linked_orgs.length + '</strong> ' + _('organisation').pluralize(r.linked_orgs.length) + ' involved</p></li>')
+					var result = $('<li><p class="search-result-name">' + r.name + '</p><p class="search-result-info"><span class="search-result-type prj">PRY</span><span class="search-linked-prjs"><strong>' + r.linked_orgs.length + '</strong> ' + _('organización').pluralize(r.linked_orgs.length) + ' involucrada</p></li>')
 				}
 			} else if (APP.state == 'cluster') {
 				if (!_.isArray(r.values[0].values)) var size = r.values.length;
@@ -44,12 +44,12 @@ function Search() {
 						return s.values.length
 					})
 				}
-				var result = $('<li><p class="search-result-name">' + r.key + '</p><p class="search-result-info"><span class="search-linked-prjs"><strong>' + size + '</strong> ' + _('project').pluralize(size) + '</p></li>')
+				var result = $('<li><p class="search-result-name">' + r.key + '</p><p class="search-result-info"><span class="search-linked-prjs"><strong>' + size + '</strong> ' + _('proyecto').pluralize(size) + '</p></li>')
 			}
 			result.find('.search-result-name').highlight(query)
 			$('#search-results').append(result);
 			if(APP.state != 'map' || (_.isNumber(r.latitude) && _.isNumber(r.longitude))) addListener(result, r);
-			else result.find('.search-result-info').prepend('<span class="search-no-coords">Not on map</span>')
+			else result.find('.search-result-info').prepend('<span class="search-no-coords">Fuera del mapa</span>')
 		})
 	}
 
