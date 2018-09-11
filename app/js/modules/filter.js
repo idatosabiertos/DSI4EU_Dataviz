@@ -60,7 +60,7 @@ function Filter() {
 		if (selected.value().length > tagsLimit) $(section + " .tags-list").addClass('showmore')
 		else $(section + " .tags-list").removeClass('showmore')
 
-		$(section + " .filters-count").html('<strong>' + selected.value().length + '</strong> of <strong>' + APP.dataset.fields[field].length + '</strong>')
+		$(section + " .filters-count").html('<strong>' + selected.value().length + '</strong> de <strong>' + APP.dataset.fields[field].length + '</strong>')
 
 		$(section + " .add-tags").off().click(function(e) {
 			e.stopPropagation();

@@ -17,8 +17,8 @@ function Dataset() {
 
     //var organisations_path = 'data/organisations2.json'
     //var projects_path = 'data/projects2.json'
-    var organisations_path = 'https://ds.idatosabiertos.org/export/organisations.json'
-    var projects_path = 'https://ds.idatosabiertos.org/export/projects.json'
+    var organisations_path = 'https://exploralat.am/export/organisations.json'
+    var projects_path = 'https://exploralat.am/export/projects.json'
     var map_path = window.isMobile ? 'data/world110m.json' : 'data/world50m.json'
     var countries_path = 'data/iso_3166_2_countries.csv'
 
@@ -82,7 +82,7 @@ function Dataset() {
             o.id = o.organisation_id
             o.name = o.organisation_name
             o.type = 'org'
-            o.url = 'https://ds.idatosabiertos.org/org/' + o.id
+            o.url = 'https://exploralat.am/org/' + o.id
             if (!o.linked_prjs) o.linked_prjs = []
 
             if (!o.linked_orgs) o.linked_orgs = []
@@ -112,7 +112,7 @@ function Dataset() {
             p.id = p.project_id
             p.name = p.project_name
             p.type = 'prj'
-            p.url = 'https://ds.idatosabiertos.org/project/' + p.id
+            p.url = 'https://exploralat.am/project/' + p.id
             if (!p.linked_orgs) p.linked_orgs = []
             delete p.country
             delete p.creation_date
