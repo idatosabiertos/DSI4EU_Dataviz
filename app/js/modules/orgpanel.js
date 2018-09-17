@@ -78,7 +78,7 @@ function OrgPanel() {
       .html("Es esta tu organización? ")
     cta.append("span").append("a")
       .attr("class", "orgpanel-cta")
-      .attr("href", "http://ds.idatosabiertos.org/login")
+      .attr("href", "http://exploralat.am/login")
       .attr("target", "_blank")
       .text("Actualiza tu perfil.")
   }
