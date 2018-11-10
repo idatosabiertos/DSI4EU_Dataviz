@@ -6,7 +6,7 @@ function NetworkList() {
 	function fillList(org) {
 
 		var network = APP.dataset.getNetworkData(org);	
-		$(".subtitle").text(network.orgs.length+_.pluralize(" Organisation", network.orgs.length)+", "+network.prjs.length+_.pluralize(" proyecto compartido", network.prjs.length));
+		$(".subtitle").text(network.orgs.length + (network.orgs.length>1? " Organizaciones":" Organización") + ", " + network.prjs.length + (network.prjs.length>1? " proyectos compartidos": " proyecto compartido"));
 		
 		network.orgs.sort(function (a, b) {
 			return b.linked_orgs.length - a.linked_orgs.length;
@@ -41,7 +41,7 @@ function NetworkList() {
 
 		itemParagraphs.append("p")
 			.text(function (d) {
-				return "Funciona con "+d.linked_orgs.length+_.pluralize(" Organización", d.linked_orgs.length)+" en "+d.shared_prjs.length+_.pluralize(" proyectos", d.shared_prjs.length);
+				return "Funciona con " + d.linked_orgs.length + (d.linked_orgs.length>1? " organizaciones":" organización") + " en " + d.shared_prjs.length + (d.shared_prjs.length>1? " proyectos": " proyecto");
 			})
 
 		function toNetworkPanel(org) {
